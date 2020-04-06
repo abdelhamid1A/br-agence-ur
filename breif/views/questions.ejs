@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../public/stylesheets/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../js/script.js"></script>
+    <title>question</title>
+  </head>
+  <body>
+       <header>
+      <div class="menu">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#"
+            ><img src="../public/images/logo.svg" alt="" id="logo"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/index">Acceuil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/inscription" >Inscription</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/departement">departement</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/question" id="this-page">Contactez-nous</a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input
+                class="form-control mr-sm-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn my-2 my-sm-0 search-btn" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </nav>
+      </div>
+      <div class="blank"></div>
+
+      <h1>
+        <h1 id="titre-officiel">
+          Contactez-nous
+        </h1>
+      </h1>
+    </header>
+
+    <div class="blank"></div>
+
+    <aside>
+    <form action="/question" method="post" class="form-message">
+               
+                 
+                  <input type="text" name="service"  id="name" class="form-message-input" placeholder="nom de service"  required>
+                  <br>
+                
+                  
+                  <input type="text" name="client"  id="name" class="form-message-input" placeholder="nom de client" required>
+                 <br>
+                
+             
+                  
+                  <input type="text" name="question" id="name" class="form-message-input" placeholder="question" required>
+                  <br>
+               
+              <button class="btn btn-registre" type="submit">ajoute un question</button>
+            </form>
+             <div>
+               </aside>
+               <div class="blank"></div>
+               <!-- end asid  -->
+               <h1 id="titre-officiel">
+                voire les qustions par service
+              </h1>
+              <div class="blank"></div>
+              <div class="form-message">
+              
+                <select  id="sel" onchange="text()">
+              
+                  <option value="select services" selected>select services</option>
+                  
+                  <%for(i in json) {%>
+                    <option value="<%= json[i].service%>"><%= json[i].service%></option>
+                    <%}%>
+    
+                </select>
+                <div id="con" style="color: #fff;"></div>
+             </div>
+             <div class="blank"></div>
+<!--
+              <%if (json.length > 0) {%>
+              <%for(i in json) {%>
+                    <div>
+                      
+
+                                    
+                       <h1><%= json[i].service%></h1>
+                       <h2 class=" text-center" style="color: #000;" ><%= json[i].client%></h2>
+                       <h3 class="text-center" style="color: #FF0068;"><%= json[i].question%></h3>
+                                  
+                   </div>
+                   <%}%>
+                   <%}%>
+            </div>  -->
+            
+
+             <!-- F O O T E R -->
+
+    <footer class="page-footer font-small stylish-color-dark pt-4">
+      <!-- <div class="blank"></div> -->
+      <div class="blank"></div>
+      <div class="second-footer">
+        <img src="../img/facebook.svg" alt="" />
+        <img src="../img/twitter.svg" alt="" />
+        <img src="../img/instagram.svg" alt="" />
+        <img src="../img/periscope.svg" alt="" />
+      </div>
+      <div class="blank"></div>
+      <div class="footer-copyright text-center py-3">
+        © 2020 Copyright:
+        <a href="#"> YOUCODE - SAFI</a>
+      </div>
+    </footer>
+
+<script>
+  var di = document.getElementById("con");
+ var cc = document.getElementById("sel");
+
+
+
+function text() {
+    
+     var g = cc.value;
+     console.log(g);
+     
+    
+    fetch('../que.json')
+  .then(response => {
+    return response.json()
+  })
+  .then(data => {
+      
+      for (var i = 0; i < data.length; i++) {
+        if(data[i].service == g){
+            
+
+              var x = di.innerHTML = data[i].question;
+              console.log(x);
+              break;
+
+            }     
+           
+      }
+
+    
+  })
+  .catch(err => {
+  })
+
+
+  
+}
+</script>
+
+
+           
+
+  </body>
+</html>
